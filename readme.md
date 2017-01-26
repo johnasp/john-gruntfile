@@ -1,0 +1,1 @@
+John's Jquery playground where I am learning to do things with Jquery, AJAX, JSON and woking with plugins.
