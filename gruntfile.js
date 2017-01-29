@@ -48,6 +48,9 @@ module.exports = function(grunt) {
           },    
 
         sass: {
+            options: {  
+                style: 'compressed'
+            },
             dist: {
               files: [{
                 expand: true,
@@ -60,11 +63,18 @@ module.exports = function(grunt) {
           },
 
         watch: {
+            css: {
+                files: ['css/*.scss'],
+                tasks: ['sass'],
+                options: {
+                    spawn: false,
+                }
+            },            
             scripts: {
                 files: ['js/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
-                spawn: false,
+                    spawn: false,
                 },
             } 
         }
@@ -73,13 +83,19 @@ module.exports = function(grunt) {
 
     });
 
-    // 3. Where we tell Grunt to enable plugins
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-sass-import');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['concat', 'uglify', /*'imagemin',*/  'sass', 'sass_import', 'watch' ]);
+    // Load all Grunt tasks automatically wihtout having to enter manaually
+    require('load-grunt-tasks')(grunt);
+
+    grunt.registerTask(
+        'default',
+            [
+                'concat', 
+                'uglify', 
+                /*'imagemin',*/  
+                'sass', 
+                'sass_import', 
+                'watch' 
+            ]
+    );
 
 };
