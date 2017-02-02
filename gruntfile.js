@@ -62,7 +62,16 @@ module.exports = function(grunt) {
             }
           },
 
+        serve: {
+            options: {
+                port: 9000,
+            }
+        },
+
         watch: {
+            options: {
+                livereload: true,
+            },              
             css: {
                 files: ['css/*.scss'],
                 tasks: ['sass'],
@@ -93,7 +102,8 @@ module.exports = function(grunt) {
                 'uglify', 
                 /*'imagemin',*/  
                 'sass', 
-                'sass_import', 
+                'sass_import',
+                'serve',
                 'watch' 
             ]
     );

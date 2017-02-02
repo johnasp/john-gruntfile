@@ -1,4 +1,9 @@
 .sass-cache
 node_modules/
-css/build
 js/build/
+css/build/
+images/
+
+*.css
+*.map 
+
