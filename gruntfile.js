@@ -42,7 +42,7 @@ module.exports = function(grunt) {
             },
             dist: {
               files: {
-                'styles.scss': ['sass/sections/*', 'sass/setup/*']
+                'styles.scss': ['sass/sections/*', 'sass/setup/*', 'sass/libs/*']
               }
             }
           },    
@@ -61,12 +61,6 @@ module.exports = function(grunt) {
               }]
             }
           },
-
-        serve: {
-            options: {
-                port: 9000,
-            }
-        },
 
         watch: {
             options: {
@@ -102,8 +96,7 @@ module.exports = function(grunt) {
                 'uglify', 
                 /*'imagemin',*/  
                 'sass', 
-                'sass_import',
-                'serve',
+                'sass_import', 
                 'watch' 
             ]
     );

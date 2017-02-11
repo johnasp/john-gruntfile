@@ -3,7 +3,7 @@ node_modules/
 js/build/
 css/build/
 images/
-
+.DS_Store
 *.css
 *.map 
 

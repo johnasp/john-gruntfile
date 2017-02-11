@@ -1,5 +1,5 @@
 {
-  "name": "johns-jquery-playground",
+  "name": "johns-gruntfile",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -10,7 +10,6 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass-import": "^0.2.2",
-    "grunt-serve": "^0.1.6",
     "load-grunt-tasks": "^3.5.2"
   }
 }
