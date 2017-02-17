@@ -4,9 +4,10 @@
 @import 'sass/sections/_header';
 @import 'sass/sections/_home';
 @import 'sass/setup/_breakpoints';
-@import 'sass/setup/_helpers';
 @import 'sass/setup/_mixins';
-@import 'sass/setup/_normalize';
 @import 'sass/setup/_off-canvas';
 @import 'sass/setup/_vars';
-@import 'sass/libs/_bootstrap';
+
+#mainNav {
+	padding: 12px;   
+}

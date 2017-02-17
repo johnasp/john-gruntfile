@@ -5,5 +5,4 @@ css/build/
 images/
 .DS_Store
 *.css
-*.map 
-
+*.map

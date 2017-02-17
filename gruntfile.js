@@ -36,21 +36,10 @@ module.exports = function(grunt) {
             }
         },
 
-        sass_import: {
-            options: {
-                basePath: 'css/'
-            },
-            dist: {
-              files: {
-                'styles.scss': ['sass/sections/*', 'sass/setup/*', 'sass/libs/*']
-              }
-            }
-          },    
-
         sass: {
-            options: {  
-                style: 'compressed'
-            },
+            //options: {  
+            //    style: 'compressed'
+            //},
             dist: {
               files: [{
                 expand: true,
@@ -62,12 +51,18 @@ module.exports = function(grunt) {
             }
           },
 
+        serve: {
+            options: {
+                port: 9000
+            }
+        },
+
         watch: {
             options: {
                 livereload: true,
             },              
             css: {
-                files: ['css/*.scss'],
+                files: ['css/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false,
@@ -94,10 +89,9 @@ module.exports = function(grunt) {
             [
                 'concat', 
                 'uglify', 
-                /*'imagemin',*/  
                 'sass', 
-                'sass_import', 
-                'watch' 
+                'serve',
+                'watch'
             ]
     );
 
