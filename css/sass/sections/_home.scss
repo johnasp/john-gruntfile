@@ -5,7 +5,28 @@
 	margin-right: 6px;
 }
 .logo {
-	border: 1px solid red;
 	display: inline-block;
-	width: 50%;
+	width: 38%;
+}
+.jumbotron {
+	a {
+		margin-right: 12px;
+	}
+}
+#info-blocks {
+	text-align: center;
+	h2 {
+		margin: 0;
+	}
+	p {
+		font-size: 16px;
+	}
+	.glyphicon {
+		font-size: 30px;
+	}
+
+}
+
+body {
+	background: green;
 }

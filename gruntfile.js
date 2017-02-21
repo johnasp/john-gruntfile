@@ -66,6 +66,7 @@ module.exports = function(grunt) {
                 tasks: ['sass'],
                 options: {
                     spawn: false,
+                    livereload: true,
                 }
             },            
             scripts: {
@@ -74,7 +75,18 @@ module.exports = function(grunt) {
                 options: {
                     spawn: false,
                 },
+            },
+            html: {
+                files : ['./contratax.html'],
+                options: {
+                    spawn: false,
+                    livereload: true,
+                } 
             } 
+        },
+
+        concurrent: {
+            target1: ['serve', 'watch'],
         }
 
 
@@ -90,8 +102,7 @@ module.exports = function(grunt) {
                 'concat', 
                 'uglify', 
                 'sass', 
-                'serve',
-                'watch'
+                'concurrent:target1'
             ]
     );
 
