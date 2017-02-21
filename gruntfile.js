@@ -37,9 +37,6 @@ module.exports = function(grunt) {
         },
 
         sass: {
-            //options: {  
-            //    style: 'compressed'
-            //},
             dist: {
               files: [{
                 expand: true,
@@ -74,14 +71,14 @@ module.exports = function(grunt) {
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
+                    livereload: true,                    
                 },
             },
             html: {
-                files : ['./contratax.html'],
+                files : ['./*.htm'],
                 options: {
-                    spawn: false,
                     livereload: true,
-                } 
+                }
             } 
         },
 
