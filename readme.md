@@ -1,1 +1,8 @@
-John's Jquery playground where I am learning to do things with Jquery, AJAX, JSON and woking with plugins.
+My gruntfile which features the following:
+
+* JS concatination and minification
+* Image compression
+* SASS preprocessor
+* Web server
+* Watch process for live autoreloading of CSS, HTML and JS files
+* Concurrent running of watch and serve blocking tasks. 
