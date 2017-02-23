@@ -83,7 +83,7 @@ module.exports = function(grunt) {
         },
 
         concurrent: {
-            target1: ['serve', 'watch', 'imagemin'],
+            target1: ['serve', 'watch'],
         }
 
 
