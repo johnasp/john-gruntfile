@@ -36,7 +36,7 @@ module.exports = function(grunt) {
           },
 
         imagemin: {
-            dynamic: {
+            build: {
                 files: [{
                     expand: true,
                     cwd: 'images/',
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
                     'head-script-disabled': true,
                     'style-disabled': true
                 },
-                src: ['*.htm']
+                src: ['*.html']
             }
         },
 
@@ -124,6 +124,7 @@ module.exports = function(grunt) {
                 'sass', 
                 'cssmin',
                 'imagemin',
+                'htmlhint',
                 'watch'
                 //'concurrent:target1'
             ]
