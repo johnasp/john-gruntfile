@@ -3,24 +3,34 @@ module.exports = function(grunt) {
     // 1. All configuration goes here 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        
+        sass: {
+            scss: {
+              files: [{
+                expand: true,
+                cwd: 'sass',
+                src: ['*.scss'],
+                dest: 'build/css',
+                ext: '.css'
+              }]
+            }
+          },
 
         concat: {   
-            dist: {
-                src: [
-                    'js/libs/*.js', // All JS in the libs folder
-                    'js/global.js'  // This specific file
-                ],
-                dest: 'js/build/production.js',
+            js: {
+                src: ['js/**/*.js'], //any folder, any .js file
+                dest: 'build/js/production.js',
             }
         },
 
         uglify: {
             options: {
               mangle: false
+              //sourceMap: true
             },
-            my_target: {
+            js: {
               files: {
-                'js/build/production.min.js': ['js/build/production.js']
+                'build/js/production.min.js': ['build/js/production.js']
               }
             }
           },
@@ -31,22 +41,34 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'images/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'images/build/'
+                    dest: 'build/img'
                 }]
             }
         },
-
-        sass: {
-            dist: {
-              files: [{
-                expand: true,
-                cwd: 'css',
-                src: ['*.scss'],
-                dest: 'css/build/',
-                ext: '.css'
-              }]
+        
+        cssmin: {
+            build: {
+              src: 'build/css/main.css',
+              dest: 'build/css/main.min.css'
             }
-          },
+        },
+        
+        htmlhint: {
+            build: {
+                options: {
+                    'tag-pair': true,
+                    'tagname-lowercase': true,
+                    'attr-lowercase': true,
+                    'attr-value-double-quotes': true,
+                    'doctype-first': true,
+                    'spec-char-escape': true,
+                    'id-unique': true,
+                    'head-script-disabled': true,
+                    'style-disabled': true
+                },
+                src: ['*.htm']
+            }
+        },
 
         serve: {
             options: {
@@ -75,23 +97,24 @@ module.exports = function(grunt) {
                 },
             },
             html: {
-                files : ['./*.htm'],
-                options: {
-                    livereload: true,
-                }
-            } 
+                files : ['./*.html'],
+                tasks: ['htmlhint'],
+            },
+            
         },
 
-        concurrent: {
-            target1: ['serve', 'watch'],
-        }
+       // concurrent: {
+         //   target1: ['serve', 'watch'],
+      //  }
 
 
 
     });
 
-    // Load all Grunt tasks automatically wihtout having to enter manaually
+    // 2. Load all Grunt tasks automatically 
     require('load-grunt-tasks')(grunt);
+    
+    // 3. Register tasks, default grunt task first
 
     grunt.registerTask(
         'default',
@@ -99,8 +122,12 @@ module.exports = function(grunt) {
                 'concat', 
                 'uglify', 
                 'sass', 
-                'concurrent:target1'
+                'cssmin',
+                'imagemin',
+                'watch'
+                //'concurrent:target1'
             ]
     );
+    grunt.registerTask('bollox', ['htmlhint','imagemin']);
 
 };

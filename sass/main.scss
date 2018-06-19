@@ -1,0 +1,14 @@
+@import 'libs/_bootstrap';
+@import 'sections/_about';
+@import 'sections/_content';
+@import 'sections/_footer';
+@import 'sections/_header';
+@import 'sections/_home';
+@import 'setup/_breakpoints';
+@import 'setup/_mixins';
+@import 'setup/_off-canvas';
+@import 'setup/_vars';
+
+body {
+    background: red;
+}

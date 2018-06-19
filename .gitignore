@@ -1,8 +1,4 @@
 .sass-cache
 node_modules/
-js/build/
-css/build/
-images/
+build
 .DS_Store
-*.css
-*.map
