@@ -1,58 +1,58 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // 1. All configuration goes here 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        
+
         sass: {
             scss: {
-              files: [{
-                expand: true,
-                cwd: 'sass',
-                src: ['*.scss'],
-                dest: 'build/css',
-                ext: '.css'
+                files: [{
+                    expand: true,
+                    cwd: 'src/sass',
+                    src: ['*.scss'],
+                    dest: 'build/css',
+                    ext: '.css'
               }]
             }
-          },
+        },
 
-        concat: {   
+        concat: {
             js: {
-                src: ['js/**/*.js'], //any folder, any .js file
+                src: ['src/js/**/*.js'], //any folder, any .js file
                 dest: 'build/js/production.js',
             }
         },
 
         uglify: {
             options: {
-              mangle: false
-              //sourceMap: true
+                mangle: false
+                //sourceMap: true
             },
             js: {
-              files: {
-                'build/js/production.min.js': ['build/js/production.js']
-              }
+                files: {
+                    'build/js/production.min.js': ['build/js/production.js']
+                }
             }
-          },
+        },
 
         imagemin: {
             build: {
                 files: [{
                     expand: true,
-                    cwd: 'images/',
+                    cwd: 'src/img/',
                     src: ['**/*.{png,jpg,gif}'],
                     dest: 'build/img'
                 }]
             }
         },
-        
+
         cssmin: {
             build: {
-              src: 'build/css/main.css',
-              dest: 'build/css/main.min.css'
+                src: 'build/css/main.css',
+                dest: 'build/css/main.min.css'
             }
         },
-        
+
         htmlhint: {
             build: {
                 options: {
@@ -66,77 +66,79 @@ module.exports = function(grunt) {
                     'head-script-disabled': true,
                     'style-disabled': true
                 },
-                src: ['*.html']
+                src: ['src/*.html']
             }
         },
         
-         move: {
-             test: {
-                 src: '*.html',
-                 dest: 'build/'
-             }
-         },
+        copy: {
+          main: {
+            expand: true,
+            cwd: 'src',
+            src: '*.html',
+            dest: 'build',
+          },
+        },
+
+        /*move: {
+            test: {
+                src: 'src/*.html',
+                dest: 'build/'
+            }
+        },
 
         serve: {
             options: {
                 port: 9000
             }
-        },
+        },*/
 
         watch: {
             options: {
                 livereload: true,
-            },              
+            },
             css: {
-                files: ['css/**/*.scss'],
+                files: ['src/css/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false,
                     livereload: true,
                 }
-            },            
+            },
             scripts: {
                 files: ['js/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
-                    livereload: true,                    
+                    livereload: true,
                 },
             },
             html: {
-                files : ['./*.html'],
+                files: ['src/*.html'],
                 tasks: ['htmlhint'],
             },
-            
+
         },
-
-       // concurrent: {
-         //   target1: ['serve', 'watch'],
-      //  }
-
 
 
     });
 
     // 2. Load all Grunt tasks automatically 
     require('load-grunt-tasks')(grunt);
-    
+
     // 3. Register tasks, default grunt task first
 
     grunt.registerTask(
-        'default',
-            [
-                'concat', 
-                'uglify', 
-                'sass', 
+        'default', [
+                'concat',
+                'uglify',
+                'sass',
                 'cssmin',
                 'imagemin',
                 'htmlhint',
-                'move',
+                'copy',
                 'watch'
-                //'concurrent:target1'
             ]
     );
-    grunt.registerTask('bollox', ['htmlhint','imagemin']);
+    grunt.registerTask('bollox', ['htmlhint', 'imagemin']);
 
 };
