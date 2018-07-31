@@ -69,6 +69,13 @@ module.exports = function(grunt) {
                 src: ['*.html']
             }
         },
+        
+         move: {
+             test: {
+                 src: '*.html',
+                 dest: 'build/'
+             }
+         },
 
         serve: {
             options: {
@@ -125,6 +132,7 @@ module.exports = function(grunt) {
                 'cssmin',
                 'imagemin',
                 'htmlhint',
+                'move',
                 'watch'
                 //'concurrent:target1'
             ]
