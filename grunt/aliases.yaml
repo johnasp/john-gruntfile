@@ -1,0 +1,9 @@
+default:
+  - 'concat'
+  - 'copy'
+  - 'cssmin'
+  - 'htmlhint'
+  - 'imagemin'
+  - 'sass'
+  - 'uglify'
+  - 'watch'
