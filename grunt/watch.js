@@ -21,5 +21,9 @@ module.exports = {
     html: {
         files: ['src/*.html'],
         tasks: ['htmlhint'],
+        options: {
+            spawn: false,
+            livereload: true,
+        },
     },
 };
