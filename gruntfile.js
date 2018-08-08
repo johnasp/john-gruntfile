@@ -12,7 +12,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'src/sass',
                     src: ['*.scss'],
-                    dest: 'build/css',
+                    dest: 'src/css',
                     ext: '.css'
               }]
             }
@@ -73,12 +73,18 @@ module.exports = function (grunt) {
         },
         
         copy: {
-          main: {
+          html: {
             expand: true,
             cwd: 'src',
             src: '*.html',
             dest: 'build',
           },
+          css: {
+            expand: true,
+            cwd: 'src',
+            src: '*.css',
+            dest: 'build',
+          }
         },
 
         connect: {
@@ -86,23 +92,20 @@ module.exports = function (grunt) {
               options: {
                 port: 9000,
                 base: 'src',
-                  livereload: true,
+                livereload: true
               }
             },
             site2: {
               options: {
                 port: 9001,
-                base: 'www-roots/site2'
+                base: 'build'
               }
             }
           },      
 
         watch: {
-            options: {
-                livereload: true,
-            },
             css: {
-                files: ['src/css/**/*.scss'],
+                files: ['src/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false,
@@ -110,22 +113,18 @@ module.exports = function (grunt) {
                 }
             },
             scripts: {
-                files: ['js/*.js'],
+                files: ['src/js/*.js'],
                 tasks: ['concat', 'uglify'],
-                options: {
-                    spawn: false,
-                    livereload: true,
-                },
             },
             html: {
                 files: ['src/*.html'],
                 tasks: ['htmlhint'],
-                
+                options: {
+                    spawn: false,
+                    livereload: true,
+                }
             },
-
         },
-
-
     });
 
     // 2. Load all Grunt tasks automatically 

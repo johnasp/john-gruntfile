@@ -1,4 +1,4 @@
-@import 'libs/_bootstrap';
+//@import 'libs/_bootstrap';
 @import 'sections/_about';
 @import 'sections/_content';
 @import 'sections/_footer';
@@ -9,6 +9,6 @@
 @import 'setup/_off-canvas';
 @import 'setup/_vars';
 
-body {
+html {
     background: red;
 }
