@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         concat: {
             js: {
                 src: ['src/js/**/*.js'], //any folder, any .js file
-                dest: 'build/js/production.js',
+                dest: 'src/js/production.js',
             }
         },
 
@@ -32,7 +32,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: {
-                    'build/js/production.min.js': ['build/js/production.js']
+                    'src/js/production.min.js': ['src/js/production.js']
                 }
             }
         },
@@ -81,10 +81,18 @@ module.exports = function (grunt) {
           },
           css: {
             expand: true,
-            cwd: 'src',
+            cwd: 'src/css',
             src: '*.css',
-            dest: 'build',
+            dest: 'build/css',
+          },
+          js: {
+            expand: true,
+            cwd: 'src/js',
+            src: '*.js',
+            dest: 'build/js',
           }
+            
+            
         },
 
         connect: {

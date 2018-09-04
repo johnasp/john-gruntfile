@@ -1,4 +1,4 @@
-//@import 'libs/_bootstrap';
+@import 'libs/_bootstrap';
 @import 'sections/_about';
 @import 'sections/_content';
 @import 'sections/_footer';
@@ -9,6 +9,48 @@
 @import 'setup/_off-canvas';
 @import 'setup/_vars';
 
-html {
-    background: red;
+.legend {
+    .progress-bars {
+        p {
+            display: flex;
+            align-items: center;
+
+            &:before {
+                content: '';
+                width: 20px;
+                height: 6px;
+                margin-right: 5px;
+                display: inline-block;
+            }
+
+            &.orange:before {
+                background: #ff6c00;
+            }
+
+            &.green:before {
+                background: #008000;
+            }
+
+            &.blue:before {
+                background: #0000FF;
+            }
+
+            &.red:before {
+                background: #FF0000;
+            }
+
+            &.grey:before {
+                background: #808080;
+            }
+
+            &.dark-blue:before {
+                background: #00008B;
+            }
+
+            &.red-dotted:before {
+                background: none;
+                border: 1px dotted red;
+            }
+        }
+    }
 }
