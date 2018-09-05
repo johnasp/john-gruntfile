@@ -23,34 +23,88 @@
                 display: inline-block;
             }
 
-            &.orange:before {
+            &.progress-bars__orange:before {
                 background: #ff6c00;
             }
 
-            &.green:before {
+            &.progress-bars__green:before {
                 background: #008000;
             }
 
-            &.blue:before {
+            &.progress-bars__blue:before {
                 background: #0000FF;
             }
 
-            &.red:before {
+            &.progress-bars__red:before {
                 background: #FF0000;
             }
 
-            &.grey:before {
+            &.progress-bars__grey:before {
                 background: #808080;
             }
 
-            &.dark-blue:before {
+            &.progress-bars__dark-blue:before {
                 background: #00008B;
             }
 
-            &.red-dotted:before {
+            &.progress-bars__red-dotted:before {
                 background: none;
                 border: 1px dotted red;
             }
         }
     }
+    .unit-status {
+        span {
+            font-weight: bold;
+        }
+        .red {
+            color: #FF0000;
+        }
+        .orange {
+            color: #ff6c00;
+        }
+        .green {
+            color: #008000;
+        }
+    }
+    .traffic-lights {
+        p {
+            display: flex;
+        }
+
+        .dot {
+            $size: 18px;
+            height: $size;
+            width: $size;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+        .stop {
+            background: -webkit-linear-gradient(#bc2222 0%, #850a09 100%);
+            background: -o-linear-gradient(#bc2222 0%, #850a09 100%);
+            background: linear-gradient(#bc2222 0%, #850a09 100%);
+        }
+
+        .ready {
+            background: linear-gradient(#E0D300 0%, #ACA30C 100%);
+        }
+
+        .go {
+            background: linear-gradient(#47C964 0%, #088223 100%);
+
+        }
+        .reg {
+            color: #018ff1;
+            strong {
+                color: #101010;
+            }
+        }
+    }
+    img {
+        height: 18px;
+        width: 18px;
+        margin-right: 6px;
+    }
 }
+
