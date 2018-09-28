@@ -14,10 +14,38 @@
 
 <body>
 
+
+    <section class="dash-controls container">
+
+        <form>
+            <div class="form-group col-md-4">
+                <label for="learners">Search learners</label>
+                <input type="text" id="learners" class="form-control" placeholder="Enter search term">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="groupings">Groupings</label>
+                <select class="form-control" id="groupings">
+                    <option value="Select">Select a grouping</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+
+            <div class="col-md-4 buttons">
+               <button class="btn btn-default">Clear</button>
+               <button class="btn btn-primary"><i class="fas fa-filter"></i> Filter</button>
+            </div>
+           
+        </form>
+    </section>
+
     <section class="legend container">
+        <button class="btn btn-default" data-toggle="modal" data-target="#legend"><i class="fas fa-bars"></i> Legend</button>
         <h2>Legend</h2>
         <div class="row">
-            <div class="progress-bars col-xs-6">
+            <div class="progress-bars col-xs-12 col-md-6">
                 <h3>Progress bars</h3>
                 <p class="progress-bars__orange">Learner progress, assessed evidence mapped to requirements</p>
                 <p class="progress-bars__green">Assessor signed off requirements</p>
@@ -28,9 +56,9 @@
                 <p class="progress-bars__red-dotted">No formal review session in last 8 weeks and none scheduled in next 4 weeks</p>
             </div>
 
-            <div class="traffic-lights col-xs-6">
+            <div class="traffic-lights col-xs-12 col-md-6">
                 <h3>Traffic Lights</h3>
-                <p><span class="dot stop"></span>Learner is OFF Track</p> 
+                <p><span class="dot stop"></span>Learner is OFF Track</p>
                 <p><i class="dot ready"></i>Learner is on Track</p>
                 <p><span class="dot go"></span>Learner is ahead</p>
                 <p><img src="img/SVG/ico-awaiting.svg" alt="">Awaiting Induction</p>
@@ -40,24 +68,24 @@
         </div><!-- row -->
 
         <div class="row">
-            <div class="unit-status col-xs-6">
+            <div class="unit-status col-xs-12 col-md-6">
                 <h3>Unit status</h3>
                 <p><span class="red">Unit C210</span> - No mapped evidence</p>
                 <p><span class="orange">Unit C210</span> - In progress</p>
                 <p><span class="green">Unit C210</span> - Complete</p>
             </div>
-            <div class="other col-xs-6">
+            <div class="other col-xs-12 col-md-6">
                 <h3>Other</h3>
                 <p><img src="img/SVG/ico-second-assess.svg" alt="">Second Assessor</p>
                 <p><img src="img/SVG/ico-lead.svg" alt="">Lead Assessor</p>
             </div>
         </div><!-- row -->
     </section>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/production.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
+
 </body>
 
 </html>

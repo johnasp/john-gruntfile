@@ -1,6 +1,9 @@
 //https://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/
 
 module.exports = function (grunt) {
+    
+ // measures the time each task takes
+  require('time-grunt')(grunt);     
 
     // 1. All configuration goes here 
     grunt.initConfig({
@@ -20,8 +23,8 @@ module.exports = function (grunt) {
 
         concat: {
             js: {
-                src: ['src/js/**/*.js'], //any folder, any .js file
-                dest: 'src/js/production.js',
+                src: ['build/js/**/*.js'], //any folder, any .js file
+                dest: 'build/js/production.js',
             }
         },
 
@@ -142,13 +145,14 @@ module.exports = function (grunt) {
 
     grunt.registerTask(
         'default', [
-                'concat',
+                
                 //'uglify',
                 'sass',
                 'cssmin',
                 'imagemin',
                 'htmlhint',
                 'copy',
+                'concat',
                 'connect',
                 'watch'
             ]

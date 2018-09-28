@@ -16,7 +16,8 @@
     "grunt-move": "^1.0.0",
     "grunt-sass-import": "^0.2.2",
     "load-grunt-config": "^0.19.2",
-    "load-grunt-tasks": "^3.5.2"
+    "load-grunt-tasks": "^3.5.2",
+    "time-grunt": "^1.4.0"
   },
   "dependencies": {}
 }

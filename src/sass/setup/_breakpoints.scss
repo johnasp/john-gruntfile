@@ -12,6 +12,9 @@ BREAKPOINTS
   @if $point == 768 {
     @media (min-width: 768px) { @content; }
   } 
+  @if $point == 992 {
+    @media (min-width: 992px) { @content; }
+  } 
   @if $point == 1300 {
     @media (min-width: 1300px) { @content; }
   }   

@@ -6720,4 +6720,73 @@ VARS
   width: 18px;
   margin-right: 6px; }
 
+.dash-controls {
+  background: #eaeaea;
+  padding: 12px;
+  border-radius: 6px; }
+  @media (min-width: 992px) {
+    .dash-controls form {
+      display: flex; } }
+  .dash-controls .buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .dash-controls .buttons button {
+      margin-right: 6px; }
+
+.nav-pills.nav-wizard > li {
+  position: relative;
+  overflow: visible;
+  border-right: 10px solid transparent;
+  border-left: 15px solid transparent; }
+  .nav-pills.nav-wizard > li + li {
+    margin-left: 0; }
+  .nav-pills.nav-wizard > li:first-child {
+    border-left: 0; }
+    .nav-pills.nav-wizard > li:first-child a {
+      border-radius: 15px 0 0 15px; }
+  .nav-pills.nav-wizard > li:last-child {
+    border-right: 0; }
+    .nav-pills.nav-wizard > li:last-child a {
+      border-radius: 0 15px 15px 0; }
+  .nav-pills.nav-wizard > li a {
+    border-radius: 0;
+    background-color: #eee;
+    padding: 10px; }
+  .nav-pills.nav-wizard > li:not(:last-child) a:after {
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: -20px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 20px 0 20px 20px;
+    border-color: transparent transparent transparent #eee;
+    z-index: 150; }
+  .nav-pills.nav-wizard > li:not(:first-child) a:before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: -20px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 20px 0 20px 20px;
+    border-color: #eee #eee #eee transparent;
+    z-index: 150; }
+  .nav-pills.nav-wizard > li:hover:not(:last-child) a:after {
+    border-color: transparent transparent transparent #aaa; }
+  .nav-pills.nav-wizard > li:hover:not(:first-child) a:before {
+    border-color: #aaa #aaa #aaa transparent; }
+  .nav-pills.nav-wizard > li:hover a {
+    background-color: #aaa;
+    color: #fff; }
+  .nav-pills.nav-wizard > li.active:not(:last-child) a:after {
+    border-color: transparent transparent transparent #F59400; }
+  .nav-pills.nav-wizard > li.active:not(:first-child) a:before {
+    border-color: #F59400 #F59400 #F59400 transparent; }
+  .nav-pills.nav-wizard > li.active a {
+    background-color: #F59400; }
+
 /*# sourceMappingURL=main.css.map */
