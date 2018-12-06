@@ -123,6 +123,10 @@ module.exports = function (grunt) {
                     livereload: true,
                 }
             },
+            img: {
+                files: ['src/img/*.*'],
+                tasks: ['imagemin'],
+            },
             scripts: {
                 files: ['src/js/*.js'],
                 tasks: ['concat', 'uglify'],
