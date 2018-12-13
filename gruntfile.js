@@ -50,6 +50,19 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        
+        grunticon: {
+            myIcons: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/icons-source',
+                    src: ['*.svg', '*.png'],
+                    dest: "src/img/icons/"
+                }],
+                options: {
+                }
+            }
+        },
 
         cssmin: {
             build: {
@@ -75,27 +88,19 @@ module.exports = function (grunt) {
             }
         },
         
+        clean: {
+          build: {
+            src: [ 'build' ]
+          },
+        },
+
         copy: {
-          html: {
-            expand: true,
+          build: {
             cwd: 'src',
-            src: '*.html',
+            src: [ '**' ],
             dest: 'build',
+            expand: true
           },
-          css: {
-            expand: true,
-            cwd: 'src/css',
-            src: '*.css',
-            dest: 'build/css',
-          },
-          js: {
-            expand: true,
-            cwd: 'src/js',
-            src: '*.js',
-            dest: 'build/js',
-          }
-            
-            
         },
 
         connect: {
@@ -149,8 +154,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask(
         'default', [
-                
-                //'uglify',
                 'sass',
                 'cssmin',
                 'imagemin',
