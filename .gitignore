@@ -1,7 +1,9 @@
 .sass-cache
 node_modules/
 build
+css
 src/icons-source
 src/img/icons
 .DS_Store
 *.png
+   
