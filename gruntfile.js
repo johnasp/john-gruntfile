@@ -15,7 +15,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'src/sass',
                     src: ['*.scss'],
-                    dest: 'src/css',
+                    dest: 'build/css',
                     ext: '.css'
               }]
             }
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         concat: {
             js: {
                 src: ['src/js/**/*.js'], //any folder, any .js file
-                dest: 'src/js/bundle.js',
+                dest: 'build/js/application.js',
             }
         },
 
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'src/icons-source',
                     src: ['*.svg', '*.png'],
-                    dest: "src/img/icons/"
+                    dest: "build/img/icons/"
                 }],
                 options: {
                 }
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
         cssmin: {
             build: {
                 src: 'src/css/main.css',
-                dest: 'src/css/main.min.css'
+                dest: 'build/css/main.min.css'
             }
         },
 
@@ -79,8 +79,8 @@ module.exports = function (grunt) {
         connect: {
             dev: {
               options: {
-                port: 9000,
-                base: 'src',
+                port: 2020,
+                base: 'build',
                 livereload: true
               }
             }
@@ -128,7 +128,7 @@ module.exports = function (grunt) {
                 'cssmin',
                 'imagemin',
                 'htmlhint',
-               // 'concat',
+                'concat',
                 'connect',
                 'watch'
             ]
