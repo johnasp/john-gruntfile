@@ -136,7 +136,7 @@ module.exports = function (grunt) {
                 'sass',
                 'cssmin',
                 'imagemin',
-                'htmlhint',
+               // 'htmlhint',
                 'concat',
                 'copy',
                 'connect',
