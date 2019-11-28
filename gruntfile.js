@@ -84,7 +84,16 @@ module.exports = function (grunt) {
                 livereload: true
               }
             }
-          },      
+          },    
+          
+        copy: {
+            html: {
+                expand: true,
+                cwd: 'src',
+                src: '*.html',
+                dest: 'build',
+            },
+        },  
 
         watch: {
             css: {
@@ -129,6 +138,7 @@ module.exports = function (grunt) {
                 'imagemin',
                 'htmlhint',
                 'concat',
+                'copy',
                 'connect',
                 'watch'
             ]
